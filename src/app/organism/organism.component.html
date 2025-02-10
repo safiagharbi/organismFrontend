@@ -1,0 +1,22 @@
+<div class="organism-container">
+    <mat-card *ngFor="let organism of organisms" class="organism-card">
+      <mat-card-header>
+        <mat-card-title><strong>{{ organism.name }}</strong></mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p><i>{{ organism.description }}</i></p>
+            <ul>
+                <strong>Rôle :</strong>
+                <li *ngFor="let sousChaine of organism.role | split">{{ sousChaine }}</li>
+            </ul>
+            <ul>
+              <strong>Cible :</strong>
+              <li *ngFor="let sousChaine of organism.target | split">{{ sousChaine }}</li>
+           </ul>
+           <ul>
+              <strong>Priorités :</strong>
+              <li *ngFor="let sousChaine of organism.priorities | split">{{ sousChaine }}</li>
+         </ul>
+      </mat-card-content>
+    </mat-card>
+  </div>
